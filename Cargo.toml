@@ -29,7 +29,7 @@ anyhow = "1.0.102"
 bson = { version = "3.1.0", features = ["serde"] }
 clap = { version = "4.6.0", features = ["derive"] }
 csv = "1.4.0"
-hocon = { version = "0.10.0", features = ["serde-support"] }
+hocon = { package = "hocon_", version = "0.10", features = ["serde-support"] }
 json5 = "1.3.1"
 linked-hash-map = "0.5.6"
 plist = "1.8.0"
@@ -41,9 +41,6 @@ serde_yaml = "0.9.34"
 serde-hjson = "1.1.0"
 toml = "1.1.2"
 toon-format = "0.4.5"
-
-[patch.crates-io]
-hocon = { git = "https://github.com/maoertel/hocon.rs" }
 
 [profile.release]
 opt-level = "z"

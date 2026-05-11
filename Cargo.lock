@@ -671,7 +671,7 @@ dependencies = [
  "bson",
  "clap",
  "csv",
- "hocon",
+ "hocon_",
  "json5",
  "linked-hash-map",
  "plist",
@@ -858,9 +858,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
-name = "hocon"
-version = "0.10.0"
-source = "git+https://github.com/maoertel/hocon.rs#aac9ae0e997d720f93bc87d82816fbba2ed2fc2d"
+name = "hocon_"
+version = "0.10.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "176696b188d5452b77981df02a6db3dd061c995f6c5cefa17457e851ab9cbb14"
 dependencies = [
  "aho-corasick",
  "java-properties",
