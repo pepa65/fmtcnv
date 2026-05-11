@@ -1,6 +1,6 @@
 [package]
 name = "fmtcnv"
-version = "2.3.1"
+version = "2.3.2"
 edition = "2024"
 authors = ["oriontvv <taranov.vv@gmail.com>", "<github.com/pepa65>"]
 description = "Cross-convert bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml"

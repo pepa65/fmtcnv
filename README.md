@@ -1,5 +1,15 @@
-# fmtcnv 2.3.1
-[![Actions Status](https://github.com/pepa65/fmtcnv/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/pepa65/fmtcnv/actions/workflows/ci.yml) [![Coverage badge](https://raw.githubusercontent.com/pepa65/fmtcnv/coverage/htmlcov/badges/flat.svg)](https://htmlpreview.github.io/?https://github.com/pepa65/fmtcnv/coverage/htmlcov/index.html) [![dependency status](https://deps.rs/repo/github/pepa65/fmtcnv/status.svg)](https://deps.rs/repo/github/pepa65/fmtcnv) [![Crates.io](https://img.shields.io/crates/v/fmtcnv.svg)](https://crates.io/crates/fmtcnv)
+# fmtcnv 2.3.2
+[![version](https://img.shields.io/crates/v/fmtcnv.svg)](https://crates.io/crates/fmtcnv)
+[![build](https://github.com/pepa65/fmtcnv/actions/workflows/ci.yml/badge.svg)](https://github.com/pepa65/fmtcnv/actions/workflows/ci.yml)
+[![coverage](https://raw.githubusercontent.com/pepa65/fmtcnv/coverage/htmlcov/badges/flat.svg)](https://htmlpreview.github.io/?https://github.com/pepa65/fmtcnv/coverage/htmlcov/index.html)
+[![dependencies](https://deps.rs/repo/github/pepa65/fmtcnv/status.svg)](https://deps.rs/repo/github/pepa65/fmtcnv)
+[![docs](https://img.shields.io/badge/docs-fmtcnv-blue.svg)](https://docs.rs/crate/fmtcnv/latest)
+[![license](https://img.shields.io/badge/License-Apache-blue.svg)](https://github.com/pepa65/fmtcnv/blob/main/LICENSE)
+[![downloads](https://img.shields.io/crates/d/fmtcnv.svg)](https://crates.io/crates/fmtcnv)
+
+**This crate 'fmtcnv' is the continuation of crate 'convfmt'
+which uses the unmaintained and outdated crate 'hocon'
+(replaced here with 'hocon_')**
 
 The command line tool [fmtcnv](https://github.com/pepa65/fmtcnv) converts between these formats:
 * [bson](https://en.wikipedia.org/wiki/BSON)
@@ -18,7 +28,7 @@ The command line tool [fmtcnv](https://github.com/pepa65/fmtcnv) converts betwee
 
 ## Usage
 ```
-fmtcnv 2.3.1 - Cross-convert bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml
+fmtcnv 2.3.2 - Cross-convert bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml
 Convert formats from stdin to stdout. Repo: github.com/pepa65/fmtcnv
 Usage: fmtcnv [OPTIONS] --from <FROM> --to <TO>
 Options:
