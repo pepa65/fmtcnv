@@ -1,6 +1,6 @@
 [package]
 name = "fmtcnv"
-version = "2.3.0"
+version = "2.3.1"
 edition = "2024"
 authors = ["oriontvv <taranov.vv@gmail.com>", "<github.com/pepa65>"]
 description = "Cross-convert bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml"
@@ -12,17 +12,14 @@ keywords = ["cli", "format", "convert", "json", "toml"]
 categories = ["command-line-utilities"]
 
 [package.metadata.binstall]
-pkg-url = "{repo}/releases/download/{version}/{name}-linux-musl{archive-suffix}"
-pkg-fmt = "Tgz"
+pkg-url = "{repo}/releases/download/{version}/{name}"
+pkg-fmt = "bin"
 disabled-strategies = ["quick-install", "compile"]
 target-family = "Linux"
 target-arch = "X86_64"
 
 [package.metadata.binstall.overrides.x86_64-pc-windows-msvc]
-pkg-url = "{repo}/releases/download/{version}/{name}-win{archive-suffix}"
-
-[package.metadata.binstall.overrides.x86_64-apple-darwin]
-pkg-url = "{repo}/releases/download/{version}/{name}-mac{archive-suffix}"
+pkg-url = "{repo}/releases/download/{version}/{name}.exe"
 
 [dependencies]
 anyhow = "1.0.102"

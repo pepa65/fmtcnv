@@ -1,8 +1,7 @@
-# convfmt
-[![Actions Status](https://github.com/oriontvv/convfmt/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/oriontvv/convfmt/actions/workflows/ci.yml) [![Coverage badge](https://raw.githubusercontent.com/oriontvv/convfmt/coverage/htmlcov/badges/flat.svg)](https://htmlpreview.github.io/?https://github.com/oriontvv/convfmt/coverage/htmlcov/index.html) [![dependency status](https://deps.rs/repo/github/oriontvv/convfmt/status.svg)](https://deps.rs/repo/github/oriontvv/convfmt) [![Crates.io](https://img.shields.io/crates/v/convfmt.svg)](https://crates.io/crates/convfmt)
+# fmtcnv 2.3.1
+[![Actions Status](https://github.com/pepa65/fmtcnv/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/pepa65/fmtcnv/actions/workflows/ci.yml) [![Coverage badge](https://raw.githubusercontent.com/pepa65/fmtcnv/coverage/htmlcov/badges/flat.svg)](https://htmlpreview.github.io/?https://github.com/pepa65/fmtcnv/coverage/htmlcov/index.html) [![dependency status](https://deps.rs/repo/github/pepa65/fmtcnv/status.svg)](https://deps.rs/repo/github/pepa65/fmtcnv) [![Crates.io](https://img.shields.io/crates/v/fmtcnv.svg)](https://crates.io/crates/fmtcnv)
 
-
-[convfmt](https://github.com/oriontvv/convfmt) is a command line tool in rust which can convert between formats:
+The command line tool [fmtcnv](https://github.com/pepa65/fmtcnv) converts between these formats:
 * [bson](https://en.wikipedia.org/wiki/BSON)
 * [csv](https://en.wikipedia.org/wiki/Comma-separated_values)
 * [hjson](https://hjson.github.io/)
@@ -17,42 +16,37 @@
 * [xml](https://en.wikipedia.org/wiki/XML)
 * [yaml](https://en.wikipedia.org/wiki/YAML)
 
-## Usage:
-
+## Usage
 ```
-$ convfmt --help
-cli tool which can convert different formats
-
-Usage: convfmt [OPTIONS] --from <FROM> --to <TO>
-
+fmtcnv 2.3.1 - Cross-convert bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml
+Convert formats from stdin to stdout. Repo: github.com/pepa65/fmtcnv
+Usage: fmtcnv [OPTIONS] --from <FROM> --to <TO>
 Options:
   -f, --from <FROM>  [possible values: bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml]
   -t, --to <TO>      [possible values: bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml]
-  -c, --compact      Compress output if possible (default = false)
+  -c, --compact      Compact output as much as possible [default: false]
   -h, --help         Print help
   -V, --version      Print version
 ```
 
+## Examples
 ```
-$ cat cfg.yml | convfmt -f yaml -t toml > cfg.toml
-$ convfmt -f json -t json < compact.json > pretty.json
-$ curl https://api.github.com/users/oriontvv | convfmt -f json -t json5 > api.json5
-```
-
-By default `convfmt` tries to use `pretty` format. Enable `--compact` option for compression.
-
-**Beware of `null`s, some formats don't support them (e.g. toml)**
-
-## Installation:
-There are few ways:
-* Download latest [binary](https://github.com/oriontvv/convfmt/releases)
-
-* Install binary using [cargo-binstall](https://github.com/cargo-bins/cargo-binstall)
-```
-cargo install cargo-binstall && cargo binstall convfmt
+cat cfg.yml |fmtcnv -f yaml -t toml >cfg.toml
+fmtcnv -f json -t json <compact.json >pretty.json
+curl https://api.github.com/users/pepa65 |fmtcnv -f json -t json5  # Output on stdout
 ```
 
-* Build local [crate](https://crates.io/crates/convfmt) with [rust](https://www.rust-lang.org/tools/install)
+**Beware of `null` values, as some formats (toml!) don't support them.**
+
+## Installation
+* Download latest [binary](https://github.com/pepa65/fmtcnv/releases)
+* Install binary using [cargo-binstall](https://github.com/cargo-bins/cargo-binstall):
+  `cargo install cargo-binstall && cargo binstall fmtcnv`
+* Build [crate](https://crates.io/crates/fmtcnv) from crates.io with [rust](https://www.rust-lang.org/tools/install):
+  `cargo install fmtcnv`
+* Build [repo](https://github.com/pepa65/fmtcnv) locally with [rust](https://www.rust-lang.org/tools/install):
 ```
-cargo install convfmt
+git clone https://github.com/pepa65/fmtcnv
+cd fmtcnv
+cargo rel
 ```
