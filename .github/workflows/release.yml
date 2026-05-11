@@ -11,7 +11,7 @@ jobs:
     needs: release-github
     runs-on: ubuntu-latest
     steps:
-      - run: apt update && apt-get install -y musl-tools
+      - run: sudo apt update && sudo apt-get -qq install musl-tools
       - uses: actions/checkout@v6
       - name: publish package to crates
         run: |
