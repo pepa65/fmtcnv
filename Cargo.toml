@@ -1,9 +1,9 @@
 [package]
 name = "fmtcnv"
-version = "2.2.1"
+version = "2.3.0"
 edition = "2024"
 authors = ["oriontvv <taranov.vv@gmail.com>", "<github.com/pepa65>"]
-description = "Cross-convert: bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml"
+description = "Cross-convert bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml"
 repository = "https://github.com/pepa65/fmtcnv/"
 documentation = "https://docs.rs/fmtcnv"
 readme = "README.md"
@@ -41,6 +41,9 @@ serde_yaml = "0.9.34"
 serde-hjson = "1.1.0"
 toml = "1.1.2"
 toon-format = "0.4.5"
+
+[dev-dependencies]
+rstest = "0.26"
 
 [profile.release]
 opt-level = "z"

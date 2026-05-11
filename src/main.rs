@@ -6,7 +6,15 @@ use clap::Parser;
 use fmtcnv::{Format, dump_value, load_input};
 
 #[derive(Parser, Debug)]
-#[command(about, version, author)]
+#[command(about, version)]
+#[clap(help_template(
+	"\
+{name} {version} - {about}
+Convert formats from stdin to stdout. Repo: github.com/pepa65/fmtcnv
+{usage-heading} {usage}
+{all-args}
+"
+))]
 struct CliArgs {
 	#[arg(short, long, value_enum)]
 	from: Format,
@@ -15,7 +23,7 @@ struct CliArgs {
 	to: Format,
 
 	#[arg(short, long)]
-	/// Compress output if possible (default = false)
+	/// Compact output as much as possible [default: false]
 	compact: bool,
 }
 
