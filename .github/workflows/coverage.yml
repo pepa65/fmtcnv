@@ -21,6 +21,8 @@ jobs:
           override: true
       - name: Cargo update
         run: cargo update
+      - name: Get musl
+        run: rustup target add x86_64-unknown-linux-musl
       - uses: actions-rs/cargo@v1
         with:
           command: check
@@ -32,17 +34,16 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v6
-
       - name: Install stable toolchain
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
           toolchain: stable
           override: true
-
+      - name: Get musl
+        run: rustup target add x86_64-unknown-linux-musl
       - name: Test coverage
         run: make coverage
-
       - name: Upload coverage results
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
