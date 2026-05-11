@@ -11,8 +11,8 @@ env:
 jobs:
   check:
     runs-on: ubuntu-latest
-
     steps:
+      - run: apt update && apt-get install -y musl-tools
       - uses: actions/checkout@v6
       - uses: actions-rs/toolchain@v1
         with:
@@ -32,6 +32,7 @@ jobs:
     permissions:
       contents: write
     steps:
+      - run: apt update && apt-get install -y musl-tools
       - name: Checkout sources
         uses: actions/checkout@v6
       - name: Install stable toolchain
