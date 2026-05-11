@@ -1,25 +1,35 @@
 [package]
-name = "convfmt"
-version = "2.1.0"
+name = "fmtcnv"
+version = "2.2.0"
 edition = "2024"
+authors = ["oriontvv <taranov.vv@gmail.com>", "<github.com/pepa65>"]
+description = "Cross-convert: bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml"
+repository = "https://github.com/pepa65/fmtcnv/"
+documentation = "https://docs.rs/fmtcnv"
+readme = "README.md"
 license = "Apache-2.0"
-authors = ["oriontvv <taranov.vv@gmail.com>"]
-description = "cli tool which can convert different formats"
-homepage = "https://github.com/oriontvv/convfmt/"
-repository = "https://github.com/oriontvv/convfmt/"
-documentation = "https://docs.rs/convfmt"
 keywords = ["cli", "format", "convert", "json", "toml"]
 categories = ["command-line-utilities"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[package.metadata.binstall]
+pkg-url = "{repo}/releases/download/{version}/{name}-linux-musl{archive-suffix}"
+pkg-fmt = "Tgz"
+disabled-strategies = ["quick-install", "compile"]
+target-family = "Linux"
+target-arch = "X86_64"
+
+[package.metadata.binstall.overrides.x86_64-pc-windows-msvc]
+pkg-url = "{repo}/releases/download/{version}/{name}-win{archive-suffix}"
+
+[package.metadata.binstall.overrides.x86_64-apple-darwin]
+pkg-url = "{repo}/releases/download/{version}/{name}-mac{archive-suffix}"
 
 [dependencies]
 anyhow = "1.0.102"
 bson = { version = "3.1.0", features = ["serde"] }
 clap = { version = "4.6.0", features = ["derive"] }
 csv = "1.4.0"
-hjson = "1.1.0"
-hocon = { version = "0.9.0", features = ["serde-support"] }
+hocon = { version = "0.10.0", features = ["serde-support"] }
 json5 = "1.3.1"
 linked-hash-map = "0.5.6"
 plist = "1.8.0"
@@ -32,14 +42,12 @@ serde-hjson = "1.1.0"
 toml = "1.1.2"
 toon-format = "0.4.5"
 
-[dev-dependencies]
-rstest = "0.26.1"
- 
-[package.metadata.binstall]
-pkg-url = "{ repo }/releases/download/{ version }/{ name }-linux-musl{ archive-suffix }"
+[patch.crates-io]
+hocon = { git = "https://github.com/maoertel/hocon.rs" }
 
-[package.metadata.binstall.overrides.x86_64-pc-windows-msvc]
-pkg-url = "{ repo }/releases/download/{ version }/{ name }-win{ archive-suffix }"
-
-[package.metadata.binstall.overrides.x86_64-apple-darwin]
-pkg-url = "{ repo }/releases/download/{ version }/{ name }-mac{ archive-suffix }"
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
