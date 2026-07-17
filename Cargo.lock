@@ -683,7 +683,7 @@ dependencies = [
 
 [[package]]
 name = "fmtcnv"
-version = "2.3.16"
+version = "2.3.17"
 dependencies = [
  "anyhow",
  "bson",
@@ -903,9 +903,9 @@ checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
 name = "hocon_"
-version = "0.10.12"
+version = "0.10.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f4a2ffaafac7e1835702db99b549c74a5228e3fe6f3181a4bcc818e44520512"
+checksum = "dbacf825d1f351727fd6743993727cf23c5bcc330968e8cc475da18cc21e585a"
 dependencies = [
  "aho-corasick",
  "java-properties",
