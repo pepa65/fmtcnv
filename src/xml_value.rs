@@ -1,6 +1,5 @@
-use anyhow::{Context, Result, bail};
-use quick_xml::Reader;
-use quick_xml::events::Event;
+use anyhow::{Result, bail};
+use quick_xml::{Reader, XmlVersion, events::Event};
 use serde::{Deserialize, Serialize};
 use serde_json::{Map, Value as JsonValue};
 
@@ -18,16 +17,13 @@ pub fn load_xml(xml_str: &[u8]) -> Result<XmlWrapper> {
 	loop {
 		match reader.read_event() {
 			Ok(Event::Start(e)) => {
-				let name = e.name().as_ref().to_vec();
-				let name = String::from_utf8_lossy(&name).into_owned();
+				let name = e.name().as_ref().to_string();
 				let mut attributes = Map::new();
 
 				for attr in e.attributes() {
 					let attr = attr?;
-					let key = attr.key.as_ref().to_vec();
-					let key = String::from_utf8_lossy(&key).into_owned();
-					let value = attr.value.as_ref().to_vec();
-					let value = String::from_utf8_lossy(&value).into_owned();
+					let key = attr.key.as_ref().to_string();
+					let value = attr.value.as_ref().to_string();
 					attributes.insert(format!("@{key}"), parse_value(&value));
 				}
 
@@ -40,11 +36,11 @@ pub fn load_xml(xml_str: &[u8]) -> Result<XmlWrapper> {
 				current_name = name;
 			}
 			Ok(Event::Text(e)) => {
-				let text = e.decode().context(format!("XML unescape error: {e:?}"))?;
+				let text = e.xml_content(XmlVersion::Implicit1_0);
 				buffer = text.into_owned();
 			}
 			Ok(Event::CData(e)) => {
-				buffer = String::from_utf8_lossy(e.as_ref()).into_owned();
+				buffer = e.as_ref().to_string();
 			}
 			Ok(Event::End(_)) => {
 				let value = if current_map.is_empty() {
