@@ -685,7 +685,7 @@ checksum = "0ce7134b9999ecaf8bcd65542e436736ef32ddca1b3e06094cb6ec5755203b80"
 
 [[package]]
 name = "fmtcnv"
-version = "2.4.3"
+version = "2.4.4"
 dependencies = [
  "anyhow",
  "bson",
@@ -900,9 +900,9 @@ checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
 name = "hocon_"
-version = "0.11.3"
+version = "0.11.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cd5a8f901d92ee4818ef8fcc6600eda678ad3c6bf61254a78e7d77a1b414f6f1"
+checksum = "b8c370a94bdaf05a2ebc630445306c5decc177e42a5a4f6a961fdeedb680ada6"
 dependencies = [
  "aho-corasick",
  "java-properties",
@@ -2521,9 +2521,9 @@ checksum = "0c790de23124f9ab44544d7ac05d60440adc586479ce501c1d6d7da3cd8c9cf5"
 
 [[package]]
 name = "smallvec"
-version = "1.16.0"
+version = "1.16.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b9be42f50aa861c555654aa3a37f52f4b1074bacf4e48fe0ef7fa584e80f1f0f"
+checksum = "ba467056f1b547ed52077911161fc86985becbc60e8e1857c8a144dab0def891"
 
 [[package]]
 name = "socket2"
