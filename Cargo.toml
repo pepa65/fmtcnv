@@ -2,7 +2,7 @@
 name = "fmtcnv"
 version = "2.4.7"
 edition = "2024"
-rust_version = "1.88.0"
+rust-version = "1.88.0"
 authors = ["oriontvv <taranov.vv@gmail.com>", "<github.com/pepa65>"]
 description = "Cross-convert bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml"
 repository = "https://github.com/pepa65/fmtcnv/"
