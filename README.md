@@ -1,7 +1,6 @@
 # fmtcnv 2.4.10
 [![version](https://img.shields.io/crates/v/fmtcnv.svg)](https://crates.io/crates/fmtcnv)
 [![build](https://github.com/pepa65/fmtcnv/actions/workflows/ci.yml/badge.svg)](https://github.com/pepa65/fmtcnv/actions/workflows/ci.yml)
-[![coverage](https://github.com/pepa65/fmtcnv/blob/coverage/htmlcov/badges/flat.svg)](https://github.com/pepa65/fmtcnv/blob/coverage/htmlcov/index.html)
 [![dependencies](https://deps.rs/repo/github/pepa65/fmtcnv/status.svg)](https://deps.rs/repo/github/pepa65/fmtcnv)
 [![docs](https://img.shields.io/badge/docs-fmtcnv-blue.svg)](https://docs.rs/crate/fmtcnv/latest)
 [![license](https://img.shields.io/badge/License-Apache-blue.svg)](https://github.com/pepa65/fmtcnv/blob/main/LICENSE)
