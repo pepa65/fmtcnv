@@ -45,7 +45,7 @@ pub enum Value {
 	Toml(toml::Value),
 	Toon(serde_json::Value),
 	Xml(XmlWrapper),
-	Yaml(serde_yaml::Value),
+	Yaml(noyalib::compat::serde_yaml::Value),
 }
 
 pub fn load_input(input: &[u8], format: Format) -> Result<Value> {
@@ -68,7 +68,7 @@ pub fn load_input(input: &[u8], format: Format) -> Result<Value> {
 			Value::Toon(toon_format::decode_default(s)?)
 		}
 		Format::Xml => Value::Xml(load_xml(input)?),
-		Format::Yaml => Value::Yaml(serde_yaml::from_slice(input)?),
+		Format::Yaml => Value::Yaml(noyalib::compat::serde_yaml::from_slice(input)?),
 	};
 	Ok(value)
 }
@@ -104,7 +104,7 @@ pub fn dump_value(value: &Value, format: Format, is_compact: bool) -> Result<Vec
 			let json_dumped = serde_json::to_vec(value)?;
 			json_to_xml(&json_dumped)?
 		}
-		(Format::Yaml, _) => serde_yaml::to_string(value).map(|e| e.into_bytes())?,
+		(Format::Yaml, _) => noyalib::compat::serde_yaml::to_string(value).map(|e| e.into_bytes())?,
 	};
 	Ok(dumped)
 }
@@ -212,11 +212,10 @@ the_answer: 42"#
 			(Format::Xml, _) => r#"<root><array>a</array><array>b</array><boolean>false</boolean><the_answer>42</the_answer></root>"#,
 			(Format::Yaml, _) => {
 				r#"array:
-- a
-- b
+  - a
+  - b
 boolean: false
-the_answer: 42
-"#
+the_answer: 42"#
 			}
 		};
 		value.to_string()
