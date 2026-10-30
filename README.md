@@ -1,4 +1,4 @@
-# fmtcnv 2.5.1
+# fmtcnv 2.5.2
 [![version](https://img.shields.io/crates/v/fmtcnv.svg)](https://crates.io/crates/fmtcnv)
 [![build](https://github.com/pepa65/fmtcnv/actions/workflows/ci.yml/badge.svg)](https://github.com/pepa65/fmtcnv/actions/workflows/ci.yml)
 [![dependencies](https://deps.rs/repo/github/pepa65/fmtcnv/status.svg)](https://deps.rs/repo/github/pepa65/fmtcnv)
@@ -27,7 +27,7 @@ The command line tool [fmtcnv](https://github.com/pepa65/fmtcnv) converts betwee
 
 ## Usage
 ```
-fmtcnv 2.5.1 - Cross-convert bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml
+fmtcnv 2.5.2 - Cross-convert bson, csv, hjson, hocon, json, json5, jsonl, plist, ron, toml, toon, xml, yaml
 Convert formats from stdin to stdout. Repo: github.com/pepa65/fmtcnv
 Usage: fmtcnv [OPTIONS] --from <FROM> --to <TO>
 Options:
